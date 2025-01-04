@@ -1,0 +1,24 @@
+[2024-12-19T14:30:12.309+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_pipeline.save_to_postgresql manual__2024-12-19T14:25:08.339383+00:00 [queued]>
+[2024-12-19T14:30:12.317+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_pipeline.save_to_postgresql manual__2024-12-19T14:25:08.339383+00:00 [queued]>
+[2024-12-19T14:30:12.318+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 2
+[2024-12-19T14:30:12.337+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): save_to_postgresql> on 2024-12-19 14:25:08.339383+00:00
+[2024-12-19T14:30:12.344+0000] {standard_task_runner.py:60} INFO - Started process 15969 to run task
+[2024-12-19T14:30:12.346+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'data_pipeline', 'save_to_postgresql', 'manual__2024-12-19T14:25:08.339383+00:00', '--job-id', '137', '--raw', '--subdir', 'DAGS_FOLDER/data_pipeline_dag.py', '--cfg-path', '/tmp/tmpvlu8jm1z']
+[2024-12-19T14:30:12.349+0000] {standard_task_runner.py:88} INFO - Job 137: Subtask save_to_postgresql
+[2024-12-19T14:30:12.403+0000] {task_command.py:423} INFO - Running <TaskInstance: data_pipeline.save_to_postgresql manual__2024-12-19T14:25:08.339383+00:00 [running]> on host 1d3bd1c7da18
+[2024-12-19T14:30:12.482+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_pipeline' AIRFLOW_CTX_TASK_ID='save_to_postgresql' AIRFLOW_CTX_EXECUTION_DATE='2024-12-19T14:25:08.339383+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-19T14:25:08.339383+00:00'
+[2024-12-19T14:30:12.496+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/data_pipeline_dag.py", line 15, in trigger_api
+    raise Exception(f"Error: {result['message']}")
+Exception: Error: Script save_to_postgresql not found
+[2024-12-19T14:30:12.509+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=data_pipeline, task_id=save_to_postgresql, execution_date=20241219T142508, start_date=20241219T143012, end_date=20241219T143012
+[2024-12-19T14:30:12.522+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 137 for task save_to_postgresql (Error: Script save_to_postgresql not found; 15969)
+[2024-12-19T14:30:12.560+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-12-19T14:30:12.579+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

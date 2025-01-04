@@ -1,0 +1,24 @@
+[2024-12-19T22:46:33.021+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_pipeline.data_validation_structured manual__2024-12-19T22:46:06.936123+00:00 [queued]>
+[2024-12-19T22:46:33.031+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_pipeline.data_validation_structured manual__2024-12-19T22:46:06.936123+00:00 [queued]>
+[2024-12-19T22:46:33.032+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2024-12-19T22:46:33.050+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): data_validation_structured> on 2024-12-19 22:46:06.936123+00:00
+[2024-12-19T22:46:33.058+0000] {standard_task_runner.py:60} INFO - Started process 23418 to run task
+[2024-12-19T22:46:33.060+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'data_pipeline', 'data_validation_structured', 'manual__2024-12-19T22:46:06.936123+00:00', '--job-id', '178', '--raw', '--subdir', 'DAGS_FOLDER/data_pipeline_dag.py', '--cfg-path', '/tmp/tmpt7xqqpdd']
+[2024-12-19T22:46:33.063+0000] {standard_task_runner.py:88} INFO - Job 178: Subtask data_validation_structured
+[2024-12-19T22:46:33.113+0000] {task_command.py:423} INFO - Running <TaskInstance: data_pipeline.data_validation_structured manual__2024-12-19T22:46:06.936123+00:00 [running]> on host 1d3bd1c7da18
+[2024-12-19T22:46:33.198+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_pipeline' AIRFLOW_CTX_TASK_ID='data_validation_structured' AIRFLOW_CTX_EXECUTION_DATE='2024-12-19T22:46:06.936123+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-19T22:46:06.936123+00:00'
+[2024-12-19T22:46:33.400+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/data_pipeline_dag.py", line 15, in trigger_api
+    raise Exception(f"Error: {result['message']}")
+Exception: Error: name 'spark' is not defined
+[2024-12-19T22:46:33.412+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=data_pipeline, task_id=data_validation_structured, execution_date=20241219T224606, start_date=20241219T224633, end_date=20241219T224633
+[2024-12-19T22:46:33.426+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 178 for task data_validation_structured (Error: name 'spark' is not defined; 23418)
+[2024-12-19T22:46:33.474+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-12-19T22:46:33.501+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

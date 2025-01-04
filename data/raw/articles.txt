@@ -1,0 +1,11 @@
+Article 1: Machine Learning
+Machine learning is a field of artificial intelligence that uses statistical techniques to give computers the ability to learn from data. It is widely used in various domains, including healthcare, finance, and marketing.
+
+Article 2: Natural Language Processing
+Natural Language Processing (NLP) is a subfield of artificial intelligence that deals with the interaction between computers and humans using natural language. Applications include text analysis, translation, and chatbots.
+
+Article 3: Generative AI
+Generative AI refers to algorithms, such as GPT-4, that can generate new content like text, images, and videos. It plays a significant role in modern AI applications, including creative writing and design.
+
+Article 3: Python
+It is a slow language but widely used.

@@ -1,0 +1,15 @@
+[2024-12-18T18:08:19.106+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_pipeline.data_validation manual__2024-12-18T18:08:13.894146+00:00 [queued]>
+[2024-12-18T18:08:19.115+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_pipeline.data_validation manual__2024-12-18T18:08:13.894146+00:00 [queued]>
+[2024-12-18T18:08:19.115+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2024-12-18T18:08:19.135+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): data_validation> on 2024-12-18 18:08:13.894146+00:00
+[2024-12-18T18:08:19.143+0000] {standard_task_runner.py:60} INFO - Started process 433 to run task
+[2024-12-18T18:08:19.145+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'data_pipeline', 'data_validation', 'manual__2024-12-18T18:08:13.894146+00:00', '--job-id', '88', '--raw', '--subdir', 'DAGS_FOLDER/data_pipeline_dag.py', '--cfg-path', '/tmp/tmpi8nf7wnh']
+[2024-12-18T18:08:19.147+0000] {standard_task_runner.py:88} INFO - Job 88: Subtask data_validation
+[2024-12-18T18:08:19.195+0000] {task_command.py:423} INFO - Running <TaskInstance: data_pipeline.data_validation manual__2024-12-18T18:08:13.894146+00:00 [running]> on host 1d3bd1c7da18
+[2024-12-18T18:08:19.267+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_pipeline' AIRFLOW_CTX_TASK_ID='data_validation' AIRFLOW_CTX_EXECUTION_DATE='2024-12-18T18:08:13.894146+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-12-18T18:08:13.894146+00:00'
+[2024-12-18T18:08:19.269+0000] {logging_mixin.py:188} INFO - Data validation starting ----
+[2024-12-18T18:08:19.360+0000] {logging_mixin.py:188} INFO - Data validated
+[2024-12-18T18:08:19.361+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-12-18T18:08:19.370+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=data_pipeline, task_id=data_validation, execution_date=20241218T180813, start_date=20241218T180819, end_date=20241218T180819
+[2024-12-18T18:08:19.399+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-12-18T18:08:19.416+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

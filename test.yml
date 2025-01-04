@@ -1,0 +1,19 @@
+Data Pipeline for Knowledge Base Creation/
+- airflow/
+    - config/
+    - dags/data_pipeline_dag.py
+    - logs/
+    - plugins/
+    - docker-compose.yml
+- data/
+    - processed/
+    - raw/
+- scrips/
+  - api_server.py
+  - data_ingestion.py
+  - save_to_postgresql.py
+  - structured_processing.py
+  - structured_validation.py
+  - unstructured_processing.py
+  - unstructured_validation.py
+- env/
